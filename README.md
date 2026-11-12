@@ -45,6 +45,7 @@ La partida actual se guarda en `localStorage` de ese navegador. Además, cada re
 
 ## Documentación
 
+- [Entrega al equipo de hosting](documentacion/ENTREGA_HOSTING.md)
 - [Arquitectura y archivos](documentacion/ARQUITECTURA.md)
 - [Pruebas y publicación](documentacion/OPERACION.md)
 - [Recursos y atribuciones](documentacion/RECURSOS_Y_ATRIBUCIONES.md)

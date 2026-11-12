@@ -1,0 +1,81 @@
+RUTA PRO — CONEXIÓN CON GOOGLE SHEETS Y PUBLICACIÓN
+
+ESTADO 2026-11-11
+La URL /exec compartida ya esta incorporada en js/conexion.js.
+El receptor respondio configurado true. Se enviaron diez respuestas ficticias
+con ID estudiante PRUEBA-CONEXION y nombre Prueba de conexion Ruta Pro.
+Confirmo ok true para las diez y reconocio un reenvio como duplicado.
+Tambien se verifico un POST desde Chrome con el codigo real de conexion.js.
+Los archivos temporales de la prueba se eliminaron durante la limpieza previa
+a publicacion. La comprobacion real quedo confirmada por el receptor.
+Las pruebas masivas usan una conexion simulada: no escriben en la hoja real.
+Revisar en Google Sheets las diez filas PRUEBA-CONEXION antes de distribuir
+el enlace a estudiantes. Pueden eliminarse manualmente despues de revisarlas.
+
+1. CREAR LA HOJA
+En Google Sheets, crear una hoja nueva llamada Resultados Ruta Pro.
+Mantener privado el archivo: los estudiantes no necesitan permiso para editarlo.
+Abrir Extensiones > Apps Script desde esa hoja.
+
+2. PREPARAR EL RECEPTOR
+Copiar todo el archivo Code.gs de esta carpeta en el editor de Apps Script,
+reemplazando el código de ejemplo. Guardar el proyecto.
+En el selector de funciones, elegir configurarHoja y pulsar Ejecutar.
+Autorizar los permisos de la cuenta propietaria cuando Google lo solicite.
+Esto crea la pestaña Respuestas con las columnas y guarda el ID de la hoja.
+No ejecutar doPost desde el editor: necesita el envío de una respuesta del juego.
+
+3. PUBLICAR EL RECEPTOR
+Implementar > Nueva implementación > Seleccionar tipo: Aplicación web.
+Ejecutar como: Yo (la cuenta propietaria de la hoja).
+Quién tiene acceso: Cualquier persona, también sin iniciar sesión.
+Implementar y copiar la URL de la aplicación web terminada en /exec.
+Si la cuenta institucional no ofrece acceso anónimo, consultar con el
+administrador antes de continuar: el envío actual del juego no inicia sesión.
+La hoja puede permanecer privada aunque el receptor acepte los envíos del juego.
+
+4. CONECTAR RUTA PRO
+En js/conexion.js sustituir TU_URL_DE_GOOGLE_APPS_SCRIPT_AQUI por la URL /exec.
+Conservar las comillas. No usar la URL de la hoja, del editor ni la URL /dev.
+Este paso ya esta realizado para la implementacion compartida el 2026-11-11.
+Abrir /exec en una pestaña: debe mostrar servicio Ruta Pro y configurado true.
+Esta comprobación no sustituye la prueba de escritura del paso siguiente.
+
+5. PROBAR ANTES DE PUBLICAR EL JUEGO
+Abrir index.html desde un servidor local, por ejemplo Live Server de VS Code.
+Completar el recorrido con nombre Prueba Ruta Pro y un ID de prueba.
+Revisar directamente la pestaña Respuestas: deben aparecer 10 filas de datos,
+una por desafío, con la misma Sesión ID y valores de Orden del 1 al 10.
+Comprobar nombre, ID, correo, respuestas, letras aleatorias, puntos y tiempo.
+La suma de Puntos da el total de esa sesión. Un nuevo intento tiene otra Sesión ID.
+El receptor evita duplicar un mismo registro Sesión ID + Desafío.
+Si falta una fila, revisar Ejecuciones en Apps Script y repetir una prueba nueva.
+El modo no-cors del juego no permite confirmar la escritura desde el navegador:
+enviar sin error NO demuestra que la fila llegó. Hay que comprobar la hoja.
+
+6. PUBLICAR EL JUEGO
+En el hosting estático elegido, cargar:
+  index.html
+  estilos.css
+  fondo.png
+  carpeta assets completa, incluida assets/audio
+  carpeta js completa, con conexion.js ya configurado
+index.html debe quedar en la raíz de publicación.
+No cargar tmp, tools, google-sheets, .git ni debug.log como parte del sitio.
+Usar el enlace HTTPS que entregue el hosting.
+
+7. VALIDACIÓN FINAL
+Abrir el enlace público en una ventana privada, con una cuenta distinta de
+la propietaria, y probar otro recorrido. Comprobar otras 10 filas en la hoja.
+Repetir la comprobación desde un teléfono antes de distribuir el enlace.
+Si cambia el código de Apps Script, actualizar su implementación publicada;
+guardar solamente el proyecto no actualiza la versión que usa la URL /exec.
+
+ALCANCE
+El receptor guarda respuestas individuales, no crea un PDF ni un informe global.
+El puntaje se calcula de nuevo a partir del desafío y del índice original, para
+respetar el orden aleatorio sin depender de la letra que muestra el navegador.
+El código tiene comprobaciones locales; la conexión real solo queda validada
+después de publicar el receptor y observar los registros en Google Sheets.
+
+Referencia oficial: https://developers.google.com/apps-script/guides/web

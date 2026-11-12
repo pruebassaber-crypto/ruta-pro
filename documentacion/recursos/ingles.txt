@@ -1,0 +1,81 @@
+INGLES - LOST ON THE WAY - RECURSOS PARA REVISION
+Estado: imagenes aprobadas e integradas como competencia independiente.
+Metodo: herramienta integrada imagegen.
+Acceso de prueba: boton Explorar Ingles en index.html, despues de llenar los datos.
+js/ingles.js contiene los textos y js/escenasIngles.js configura los escenarios.
+La competencia se prepara de forma independiente. Su lugar y las conexiones
+con otras competencias se definiran cuando esten todas desarrolladas.
+
+DINAMICA CONFIRMADA
+Inicio: nivel medio, Exercise 1, Follow the directions.
+Si falla: nivel basico, Exercise 1, Where should Alex go?
+Si acierta: nivel avanzado, Exercise 1, Choose the best route.
+Cada jugador respondera dos desafios y visitara dos de los tres escenarios.
+Los otros tres ejercicios del PDF no se integran en esta seleccion.
+Alex es un estudiante de intercambio que no encuentra el camino; su celular
+no tiene bateria. Las indicaciones se consultan en papel, no en su telefono.
+
+FONDOS
+fondos/ingles_medio_calle.png
+  Calle con farmacia, supermercado, repisa para la hoja y señal de informacion.
+  No se muestra una parada junto al supermercado para no anticipar la respuesta.
+fondos/ingles_basico_plataformas.png
+  Espera del transporte universitario, aviso, señales de plataformas y bus.
+  Las plataformas y el acceso al bus pertenecen al fondo.
+fondos/ingles_avanzado_rutas.png
+  Punto de conexion de rutas, dos buses y panel de dos opciones con cabecera.
+  El panel y los accesos pertenecen al fondo, sin sprites flotantes.
+Los tres fondos miden 1672 x 941 y se ajustaran al lienzo del juego al programar.
+
+RECURSOS TRANSPARENTES
+personajes/alex.png
+  Un mismo personaje para las tres variantes, consistente con el profesor
+  y la recepcionista. Mochila y celular apagado incluidos en su silueta.
+objetos/hoja_indicaciones.png
+  Hoja con esquina doblada para colocar apoyada en la repisa del escenario medio.
+  Las marcas graficas son decorativas; las indicaciones reales iran en la interfaz.
+
+INTERACCIONES PREVISTAS
+Medio: Alex -> hoja con indicaciones -> señal para abrir la pregunta.
+Basico: Alex -> aviso de transporte -> señal de plataforma -> acceso al bus.
+Avanzado: Alex -> panel de rutas y hora de clase -> pregunta -> acceso al transporte.
+Las ubicaciones y zonas de interaccion se configuran en js/escenasIngles.js.
+Alex se coloca sobre el suelo y la hoja se apoya en la repisa.
+La salida de cada ruta se habilita al registrar la respuesta, incluso si falla.
+
+TEXTO DE LOS RECURSOS
+Los paneles y señales sin texto se completan mediante ventanas de lectura.
+No se incrustan preguntas, alternativas, horarios ni numeros de plataforma.
+Los unicos textos decorativos son PHARMACY y SUPERMARKET en la calle.
+Se conservaran los estimulos y opciones en ingles del PDF, sin traduccion
+anticipada que sustituya la comprension del idioma.
+La interfaz de navegacion seguira en español y con la tipografia pixel art.
+La hora 7:50 de la clase se usara en el avanzado; no se introduce la hora 8:00
+del otro ejercicio medio que no forma parte de la seleccion confirmada.
+
+DIMENSIONES NATIVAS
+fondos/ingles_avanzado_rutas.png: 1672 x 941 px
+fondos/ingles_basico_plataformas.png: 1672 x 941 px
+fondos/ingles_medio_calle.png: 1672 x 941 px
+objetos/hoja_indicaciones.png: 1536 x 1024 px
+personajes/alex.png: 1024 x 1536 px
+
+PROMPTS COMPLETOS
+
+assets/ingles/fondos/ingles_medio_calle.png
+Use case: stylized-concept. ONE production background for the English competency of Ruta Pro, an existing 2D exploration game. Landscape 1672x941 approximately 16:9, fully opaque. Reference is environment STYLE only, NOT a bus stop to copy. Scene: quiet pedestrian-friendly Bogotá neighborhood street corner with a pharmacy storefront in back left with small English pixel sign 'PHARMACY' and restrained green cross, supermarket storefront in back right with small English pixel sign 'SUPERMARKET', muted brick/concrete buildings, a modest tree and simple street curb. Frontal eye-level view with shallow depth like reference, NOT isometric or aerial. Broad continuous tiled sidewalk occupies bottom 42 percent, clear for a large walking player and an independent Alex sprite. In upper/center-left a low small fixed wooden information ledge on a wall, with empty top surface where a separate paper sprite can later rest. At right edge of sidewalk a grounded street information post with a simple beige opaque BLANK sign face, for question interaction. All structures meet pavement, no floating doors or signs. No people, characters, bus, bus-stop icon, route arrows, highlighted correct path, phones, questions, schedules, UI or real company names. Only the two shop labels mentioned, no other writing. Do NOT visually reveal which place a bus stop is next to; the player must read a separate English directions note. Daylight coherent with reference. Mandatory Ruta Pro identity: clean sharp pixel art with visible uniform square pixel clusters and simple geometric forms, limited 2-4 shade tones per material, moderate detail, no antialiasing, no blur, no painterly gradients. Mature muted environmental palette #6F8865 #405D48 #B5A383 #85877F #617B8B #75657F #80634F #A47760 #343C43. Institutional #237A45 #76B82A #F4E6C8 #303744 #3D78B8 only controlled small accents; no neon, fluorescents, baby pastels, whitewash or uniform gray filter. 
+
+assets/ingles/fondos/ingles_basico_plataformas.png
+Use case: stylized-concept. ONE fully opaque landscape 1672x941 production background for Ruta Pro's ENGLISH competency. Reference is architectural/palette/camera STYLE and same urban neighborhood identity. Front eye-level shallow-depth 2D exploration-game view, not isometric/aerial. Broad continuous pedestrian pavement covers bottom 40 percent free for player and separate Alex sprite. Physically grounded architecture, signs and bus doorways, no floating objects. Clear depth and values, daylight matching reference. NO people/characters, questions, answer highlights, route arrows, schedules, digits, platform numbers, clock, real brand logos or UI. Information on boards will be rendered in separate English reading windows by the game, so ALL board faces and destination displays must be opaque blank beige or dark-bluegray surfaces. Mandatory Ruta Pro identity: clean sharp pixel art with visible uniform square pixel clusters and simple geometric forms, limited 2-4 shade tones per material, moderate detail, no antialiasing, no blur, no painterly gradients. Mature muted environmental palette #6F8865 #405D48 #B5A383 #85877F #617B8B #75657F #80634F #A47760 #343C43. Institutional #237A45 #76B82A #F4E6C8 #303744 #3D78B8 only controlled small accents; no neon, fluorescents, baby pastels, whitewash or uniform gray filter. Scene: small UNIVERSITY TRANSPORT waiting area reached after finding the stop. A sheltered waiting bench on the left, two low boarding platform islands in middle/back, each with a simple grounded platform signpost whose square plate is BLANK (no number). A large framed notice board in upper-middle-left with ONE blank beige notice panel, mounted on real support legs ending at pavement. One modest muted blue-gray university shuttle bus with a thin institutional green accent parked at back right, doorway open toward sidewalk with small level boarding ramp/threshold touching platform correctly. Background muted brick campus-adjacent buildings and trees consistent with reference. Keep center foreground empty; no bus on pedestrian pavement. No pharmacy/supermarket labels repeated here, no writing anywhere.
+
+assets/ingles/fondos/ingles_avanzado_rutas.png
+Use case: stylized-concept. ONE fully opaque landscape 1672x941 production background for Ruta Pro's ENGLISH competency. Reference is architectural/palette/camera STYLE and same urban neighborhood identity. Front eye-level shallow-depth 2D exploration-game view, not isometric/aerial. Broad continuous pedestrian pavement covers bottom 40 percent free for player and separate Alex sprite. Physically grounded architecture, signs and bus doorways, no floating objects. Clear depth and values, daylight matching reference. NO people/characters, questions, answer highlights, route arrows, schedules, digits, platform numbers, clock, real brand logos or UI. Information on boards will be rendered in separate English reading windows by the game, so ALL board faces and destination displays must be opaque blank beige or dark-bluegray surfaces. Mandatory Ruta Pro identity: clean sharp pixel art with visible uniform square pixel clusters and simple geometric forms, limited 2-4 shade tones per material, moderate detail, no antialiasing, no blur, no painterly gradients. Mature muted environmental palette #6F8865 #405D48 #B5A383 #85877F #617B8B #75657F #80634F #A47760 #343C43. Institutional #237A45 #76B82A #F4E6C8 #303744 #3D78B8 only controlled small accents; no neon, fluorescents, baby pastels, whitewash or uniform gray filter. Scene: a small transit ROUTE CONNECTION plaza serving the university. Two equally styled muted blue-gray buses in distinct bays at back-left and back-right, equal prominence and same small green accents; blank dark destination displays. At upper-center a single solid information kiosk, correctly grounded, with TWO equally sized blank sand rectangular panels side by side in a dark frame; above them one smaller blank header strip to later display class-start reference in UI. No colors indicating which route is correct. A clear boarding access toward the right bus, open door structurally attached to bus and threshold at pavement. A few back-edge benches and restrained trees, brick/concrete city setting matching reference. Preserve a wide empty central foreground for Alex and player; no gate or pole floating over roadway. No letters, time digits or route numbers anywhere.
+
+assets/ingles/personajes/alex.png
+Use case: stylized-concept. ONE isolated full-body exchange-student NPC named Alex for Ruta Pro, on a TRUE TRANSPARENT background. The reference professor is mandatory character STYLE only: match compact retro RPG/chibi proportions, large head about quarter-to-third total height, short torso and legs, chunky block hands, simple dot/short-line eyes and small mouth, dark crisp outlines, consistent large square pixel grid, 2-tone flat shading. NOT a realistic tall person or detailed pixel painting. Alex is a young adult university student, short light-brown slightly tousled hair, warm light-medium skin, simple muted blue-gray jacket over sand shirt, dark charcoal trousers, dark sneakers and a small muted terracotta backpack worn on BOTH shoulders (straps visible). Friendly slightly puzzled expression, one hand raised in modest conversational gesture, other holding a tiny charcoal phone with dark blank powered-off screen near waist. Front-facing slight three-quarter view, entire body and feet visible, centered with small transparent margin. No books, ID lanyard or glasses. NO floor, cast shadow, glow, haze, vignette, backdrop, text or UI. Exterior alpha 0, physical figure fully opaque. Mandatory Ruta Pro identity: clean sharp pixel art with visible uniform square pixel clusters and simple geometric forms, limited 2-4 shade tones per material, moderate detail, no antialiasing, no blur, no painterly gradients. Mature muted environmental palette #6F8865 #405D48 #B5A383 #85877F #617B8B #75657F #80634F #A47760 #343C43. Institutional #237A45 #76B82A #F4E6C8 #303744 #3D78B8 only controlled small accents; no neon, fluorescents, baby pastels, whitewash or uniform gray filter. 
+
+assets/ingles/objetos/hoja_indicaciones.png
+Use case: stylized-concept. ONE small standalone folded paper directions note object sprite for Ruta Pro, genuinely TRANSPARENT PNG cutout. An opaque warm sand/beige rectangular sheet with a single small folded corner, simple dark-gray pixel outline and 2-tone paper shading, slightly angled lying flat in shallow perspective on an implied horizontal surface. A few short dark blue-gray rectangular marks suggest text but are NOT letters or readable writing; no arrows, map routes, numbered directions or question answers. The actual English instructions will be rendered by game UI when interacted with, not embedded in this sprite. Object fills most of canvas with modest transparent margin. Match the game's clean readable geometric pixel-art environmental props. Entire paper surface opaque, outside alpha0. No table, wall, floor, hands, backdrop, checkerboard, smoky halo, ground shadow, glow or watermark. Mandatory Ruta Pro identity: clean sharp pixel art with visible uniform square pixel clusters and simple geometric forms, limited 2-4 shade tones per material, moderate detail, no antialiasing, no blur, no painterly gradients. Mature muted environmental palette #6F8865 #405D48 #B5A383 #85877F #617B8B #75657F #80634F #A47760 #343C43. Institutional #237A45 #76B82A #F4E6C8 #303744 #3D78B8 only controlled small accents; no neon, fluorescents, baby pastels, whitewash or uniform gray filter. 
+
+
+ESTADO ACTUAL 2026-11-11: integrado en el recorrido completo. Orden: tutorial -> RQ -> CC -> CE -> EN -> LC -> resultados. Todos los recursos de esta carpeta se utilizan.

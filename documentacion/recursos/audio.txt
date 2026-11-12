@@ -1,0 +1,6 @@
+RUTA PRO - MUSICA
+Pista: Chill & Relaxing Pokémon Music Mix.
+Archivo: assets/audio/pokemon-relaxing-mix.mp3.
+Fuente: MP3 proporcionado por la usuaria.
+Reproduccion local en bucle desde Ingresar, volumen 18%, con boton de silencio.
+Se mantiene entre escenas y resultados. Se pausa al ocultar la pestana.
